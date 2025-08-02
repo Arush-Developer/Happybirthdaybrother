@@ -1,22 +1,36 @@
 // script.js
 
-// Function to transition from intro to main lobby
 function enterLobby() {
   const intro = document.querySelector('.intro');
   const lobby = document.querySelector('.lobby');
   const audio = document.getElementById('bgm');
+  const parachute = document.getElementById('parachute');
 
-  // Fade out intro
+  // Fade out intro, show lobby
   intro.classList.add('hidden');
-
-  // Show lobby with animation
   lobby.classList.remove('hidden');
 
-  // Start background music from 50s
+  // Start music from 50s
   audio.currentTime = 50;
   audio.play().catch(() => {
     console.log("Autoplay blocked. User must interact.");
   });
+
+  // Trigger parachute drop
+  if (parachute) {
+    parachute.classList.add('drop');
+  }
 }
 
-// Optional: Add click sound or transition effect (future enhancement)
+// Toggle mute/unmute
+function toggleMute() {
+  const audio = document.getElementById('bgm');
+  const btn = document.getElementById('muteBtn');
+  if (audio.muted) {
+    audio.muted = false;
+    btn.innerText = '🔊';
+  } else {
+    audio.muted = true;
+    btn.innerText = '🔇';
+  }
+}
