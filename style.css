@@ -1,0 +1,129 @@
+/* style.css */
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: #0c0c0c;
+  color: #f0f0f0;
+  overflow-x: hidden;
+}
+
+.intro {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url('assets/bgmi-lobby.jpg') no-repeat center center/cover;
+  text-align: center;
+  animation: fadeIn 2s ease-in;
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+  color: #ffde59;
+}
+
+.highlight {
+  color: #ff4c60;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+button {
+  padding: 12px 24px;
+  background: #ff4c60;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #ff1f3d;
+}
+
+.lobby {
+  padding: 20px;
+  background: linear-gradient(#1f1f1f, #121212);
+  animation: slideUp 1s ease-in;
+}
+
+.hidden {
+  display: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.ping {
+  font-size: 0.8rem;
+  color: #32ff7e;
+}
+
+.stats, .memory-cards, .gallery, .final-msg {
+  margin: 30px 0;
+}
+
+.stats ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card {
+  background: #242424;
+  padding: 16px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ff4c60;
+  transform: scale(1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.photos img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ffde59;
+}
+
+.final-msg p {
+  font-size: 1.1rem;
+  text-align: center;
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #ff4c60;
+}
+
+footer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideUp {
+  from {transform: translateY(100%);}
+  to {transform: translateY(0);}
+}
