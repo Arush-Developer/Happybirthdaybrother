@@ -1,0 +1,70 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Drop - Sahil Bhaiya</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="intro">
+    <h1>Welcome, <span class="highlight">Chooza</span></h1>
+    <p class="subtitle">Level 19 | 🎂 Mission: Birthday Drop</p>
+    <button onclick="enterLobby()">Enter Lobby</button>
+  </div>
+
+  <main class="lobby hidden">
+    <header>
+      <h2>BGMI Birthday Lobby</h2>
+      <div class="ping">📶 19ms</div>
+    </header>
+
+    <section class="stats">
+      <h3>Player Stats</h3>
+      <ul>
+        <li><strong>Nickname:</strong> Chooza</li>
+        <li><strong>Superpower:</strong> Time Stop Watch ⏱️</li>
+        <li><strong>Favourite Mode:</strong> BGMI Squad Drop 🎮</li>
+        <li><strong>Role:</strong> MVP of the Match (and Life)</li>
+      </ul>
+    </section>
+
+    <section class="memory-cards">
+      <h3>Drop Zone Memories</h3>
+      <div class="cards">
+        <div class="card">That time we wiped a squad with pans 😂</div>
+        <div class="card">Late night call after losing chicken dinner 🍗</div>
+        <div class="card">Your obsession with helmets even at full HP 🤯</div>
+        <div class="card">You once said: "Let’s play one match..." (3 hours later 😭)</div>
+        <div class="card">"Time Stop Watch" power confirmed 💀</div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <h3>Memories Gallery</h3>
+      <div class="photos">
+        <img src="assets/sahil1.jpg" alt="Sahil Pic 1" />
+        <img src="assets/sahil2.jpg" alt="Sahil Pic 2" />
+        <img src="assets/sahil3.jpg" alt="Sahil Pic 3" />
+        <img src="assets/sahil4.jpg" alt="Sahil Pic 4" />
+        <img src="assets/sahil5.jpg" alt="Sahil Pic 5" />
+      </div>
+    </section>
+
+    <section class="final-msg">
+      <h3>Final Drop Message</h3>
+      <p>Yo Sahil Bhaiya, happy 19th! 🥳<br/>From duo drops to endless jokes, you're not just a cousin — you're my squad leader in life.<br/>Aapka level 19 start ho gaya hai... mission clear karte rehna 😎<br/><span class="highlight">Winner Winner Birthday Dinner!</span></p>
+    </section>
+
+    <footer>
+      <audio id="bgm" controls autoplay loop>
+        <source src="assets/birthday.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
