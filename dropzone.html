@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Zone Memories - BGMI Birthday</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dropzone-screen">
+        <div class="dropzone-background">
+            <div class="dropzone-overlay"></div>
+            
+            <!-- Header -->
+            <div class="dropzone-header">
+                <button class="back-btn" onclick="goBack()">
+                    <span>←</span> Back to Lobby
+                </button>
+                <h1>🪂 Drop Zone Memories</h1>
+                <div class="zone-indicator">
+                    <span class="zone-name">Memory Lane</span>
+                    <span class="zone-status">Safe Zone</span>
+                </div>
+            </div>
+
+            <!-- Memory Cards -->
+            <div class="memory-grid">
+                <div class="memory-card" data-memory="1">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="memory-icon">🎮</div>
+                        <h3>Squad Pan Wala Moment</h3>
+                        <p>Woh din yaad hai jab squad pan se maara tha? 😂<br>
+                        Epic fail but epic fun!</p>
+                    </div>
+                </div>
+
+                <div class="memory-card" data-memory="2">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="memory-icon">🍗</div>
+                        <h3>Chicken Dinner Celebrations</h3>
+                        <p>Chicken dinner ke baad late night gyaan sessions 🍗📞<br>
+                        "Bhai strategy kya thi?" - Classic Chooza!</p>
+                    </div>
+                </div>
+
+                <div class="memory-card" data-memory="3">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="memory-icon">🪖</div>
+                        <h3>Helmet Obsession</h3>
+                        <p>Helmet obsession even at full HP! 🪖<br>
+                        "Safety first, kills second" - Chooza Logic</p>
+                    </div>
+                </div>
+
+                <div class="memory-card photo-card" data-memory="4">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="photo-container">
+                            <img src="assets/photo1.jpg" alt="Memory Photo 1" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjMzMzIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNzUiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UGhvdG8gMTwvdGV4dD4KPC9zdmc+'">
+                        </div>
+                        <h3>Epic Gaming Moments</h3>
+                        <p>Those legendary gaming sessions! 📸</p>
+                    </div>
+                </div>
+
+                <div class="memory-card photo-card" data-memory="5">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="photo-container">
+                            <img src="assets/photo2.jpg" alt="Memory Photo 2" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjMzMzIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iNzUiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UGhvdG8gMjwvdGV4dD4KPC9zdmc+'">
+                        </div>
+                        <h3>Squad Goals</h3>
+                        <p>Best teammates ever! 🤝</p>
+                    </div>
+                </div>
+
+                <div class="memory-card photo-card" data-memory="6">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="photo-container">
+                            <img src="assets/memory.jpg" alt="BGMI Memory" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDIwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRkY2QjM1Ii8+Cjx0ZXh0IHg9IjEwMCIgeT0iNzUiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+QkdNSSBNZW1vcnk8L3RleHQ+Cjwvc3ZnPg=='">
+                        </div>
+                        <h3>Victory Royale</h3>
+                        <p>That epic BGMI win! 🏆</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Message -->
+            <div class="final-message">
+                <div class="message-container">
+                    <div class="message-glow"></div>
+                    <h2>🎉 Birthday Drop Complete! 🎉</h2>
+                    <p class="final-text">
+                        Tutan kaisa laga yeh birthday ka drop? Batao fir! 😎❤️<br>
+                        <span class="sub-text">Hope your special day is as epic as your gaming skills!</span>
+                    </p>
+                    <div class="celebration-icons">
+                        <span>🎂</span>
+                        <span>🎮</span>
+                        <span>🎉</span>
+                        <span>🏆</span>
+                        <span>❤️</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dropzone.js"></script>
+</body>
+</html>
