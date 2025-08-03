@@ -1,70 +1,118 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Birthday Drop - Sahil Bhaiya</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGMI Birthday - Chooza's Special Day</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="intro">
-    <h1>Welcome, <span class="highlight">Chooza</span></h1>
-    <p class="subtitle">Level 19 | 🎂 Mission: Birthday Drop</p>
-    <button onclick="enterLobby()">Enter Lobby</button>
-  </div>
+    <!-- Airdrop Intro Screen -->
+    <div id="airdrop-screen" class="screen active">
+        <div class="sky-background">
+            <div class="clouds"></div>
+            <div class="airdrop-container">
+                <div class="airdrop-crate" id="airdrop-crate">
+                    <div class="crate-body">
+                        <div class="crate-face front">🎁</div>
+                        <div class="crate-face back">🎂</div>
+                        <div class="crate-face left">🎮</div>
+                        <div class="crate-face right">🎉</div>
+                        <div class="crate-face top">BGMI</div>
+                        <div class="crate-face bottom">CHOOZA</div>
+                    </div>
+                    <div class="parachute">
+                        <div class="parachute-cloth"></div>
+                        <div class="parachute-lines"></div>
+                    </div>
+                </div>
+                <div class="smoke-effect" id="smoke-effect"></div>
+            </div>
+            <div class="airdrop-ui" id="airdrop-ui">
+                <div class="airdrop-message">
+                    <h2>🎁 Birthday Drop Incoming!</h2>
+                    <p>Special delivery for Chooza...</p>
+                </div>
+                <button class="open-drop-btn" id="open-drop-btn">
+                    <span class="btn-glow"></span>
+                    🎁 Open Drop
+                </button>
+            </div>
+        </div>
+    </div>
 
-  <main class="lobby hidden">
-    <header>
-      <h2>BGMI Birthday Lobby</h2>
-      <div class="ping">📶 19ms</div>
-    </header>
+    <!-- Main Lobby Screen -->
+    <div id="lobby-screen" class="screen">
+        <div class="lobby-background">
+            <div class="lobby-overlay"></div>
+            
+            <!-- Top HUD -->
+            <div class="top-hud">
+                <div class="profile-section" onclick="goToStats()">
+                    <div class="profile-avatar">
+                        <img src="assets/chooza.png" alt="Chooza" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMzAiIGZpbGw9IiNGRjZCMzUiLz4KPHN2ZyB4PSIxNSIgeT0iMTAiIHdpZHRoPSIzMCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0xMiAyQzEzLjEgMiAxNCAyLjkgMTQgNEMxNCA1LjEgMTMuMSA2IDEyIDZDMTAuOSA2IDEwIDUuMSAxMCA0QzEwIDIuOSAxMC45IDIgMTIgMlpNMjEgOVYyMkgxOVYxNkgxM1YyMkgxMVY5QzExIDguNDUgMTEuNDUgOCAxMiA4SDE4QzE4LjU1IDggMTkgOC40NSAxOSA5WiIvPgo8L3N2Zz4KPC9zdmc+'">
+                        <div class="level-badge">19</div>
+                    </div>
+                    <div class="profile-info">
+                        <h3>Chooza</h3>
+                        <p>Squad Ka Ustaad</p>
+                    </div>
+                </div>
+                
+                <div class="top-right-icons">
+                    <div class="icon-item">
+                        <span class="icon">🎁</span>
+                        <span class="count">5</span>
+                    </div>
+                    <div class="icon-item">
+                        <span class="icon">💎</span>
+                        <span class="count">1900</span>
+                    </div>
+                    <div class="icon-item settings">
+                        <span class="icon">⚙️</span>
+                    </div>
+                </div>
+            </div>
 
-    <section class="stats">
-      <h3>Player Stats</h3>
-      <ul>
-        <li><strong>Nickname:</strong> Chooza</li>
-        <li><strong>Superpower:</strong> Time Stop Watch ⏱️</li>
-        <li><strong>Favourite Mode:</strong> BGMI Squad Drop 🎮</li>
-        <li><strong>Role:</strong> MVP of the Match (and Life)</li>
-      </ul>
-    </section>
+            <!-- Welcome Message -->
+            <div class="welcome-message" id="welcome-message">
+                <h1>🎂 Happy Birthday Chooza! 🎉</h1>
+                <p>Level 19 unlocked! Ready for epic adventures? 🎮</p>
+            </div>
 
-    <section class="memory-cards">
-      <h3>Drop Zone Memories</h3>
-      <div class="cards">
-        <div class="card">That time we wiped a squad with pans 😂</div>
-        <div class="card">Late night call after losing chicken dinner 🍗</div>
-        <div class="card">Your obsession with helmets even at full HP 🤯</div>
-        <div class="card">You once said: "Let’s play one match..." (3 hours later 😭)</div>
-        <div class="card">"Time Stop Watch" power confirmed 💀</div>
-      </div>
-    </section>
+            <!-- Team Section -->
+            <div class="team-section">
+                <h3>Squad Members</h3>
+                <div class="teammate">
+                    <div class="teammate-avatar">
+                        <span>🤖</span>
+                    </div>
+                    <div class="teammate-info">
+                        <span class="name">ArushGPT</span>
+                        <span class="status online">😎 Online</span>
+                    </div>
+                </div>
+            </div>
 
-    <section class="gallery">
-      <h3>Memories Gallery</h3>
-      <div class="photos">
-        <img src="assets/sahil1.jpg" alt="Sahil Pic 1" />
-        <img src="assets/sahil2.jpg" alt="Sahil Pic 2" />
-        <img src="assets/sahil3.jpg" alt="Sahil Pic 3" />
-        <img src="assets/sahil4.jpg" alt="Sahil Pic 4" />
-        <img src="assets/sahil5.jpg" alt="Sahil Pic 5" />
-      </div>
-    </section>
+            <!-- Bottom Controls -->
+            <div class="bottom-controls">
+                <button class="start-btn" onclick="goToDropzone()">
+                    <span class="btn-glow"></span>
+                    <span class="btn-text">START</span>
+                    <span class="btn-subtitle">Drop Zone Memories</span>
+                </button>
+                
+                <div class="mode-selector">
+                    <div class="mode-item active">
+                        <span class="mode-icon">🎂</span>
+                        <span class="mode-name">Birthday</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <section class="final-msg">
-      <h3>Final Drop Message</h3>
-      <p>Yo Sahil Bhaiya, happy 19th! 🥳<br/>From duo drops to endless jokes, you're not just a cousin — you're my squad leader in life.<br/>Aapka level 19 start ho gaya hai... mission clear karte rehna 😎<br/><span class="highlight">Winner Winner Birthday Dinner!</span></p>
-    </section>
-
-    <footer>
-      <audio id="bgm" controls autoplay loop>
-        <source src="assets/birthday.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
-    </footer>
-  </main>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
