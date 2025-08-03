@@ -1,0 +1,16 @@
+{
+  "name": "bgmi-birthday-website",
+  "version": "1.0.0",
+  "description": "BGMI-themed birthday website for Chooza",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server . -p 3000 -o",
+    "start": "npx http-server . -p 3000"
+  },
+  "keywords": ["bgmi", "birthday", "gaming", "website"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
